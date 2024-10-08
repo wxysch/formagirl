@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 0;
 }
+* {
+    font-family: 'Nunito Sans';
+}   
 /* Хедер и навигация */
 header {
     background-color: #e74c3c;
@@ -23,6 +26,8 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    
 }
 
 .logo img {
@@ -52,7 +57,9 @@ header nav a:hover {
 
 .container {
     text-align: center;
-    padding: 100px 50px 50px;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 h1 {
@@ -80,13 +87,12 @@ p {
 }
 
 /*Postcard*/
-body {
+body{
     font-family: 'Courier New', Courier, monospace;
     background-color: #ffebcd;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -139,17 +145,21 @@ button:hover {
 
 
 /* reasons */
-.container {
+.hero {
     padding: 20px;
-    margin-top: 100px;
+    margin-top: 100px !important;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
+#greeting {
 
+}
 h2 {
     color: #e74c3c;
     text-align: center;
+}
+#reasons {
+    margin-top: 100px;
 }
