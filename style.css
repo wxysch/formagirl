@@ -11,7 +11,7 @@ body {
 /* Хедер и навигация */
 header {
   background-color: #e74c3c;
-  padding: 15px 20px;
+  padding: 15px 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,18 +34,20 @@ header {
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
+  position: relative;
+  z-index: 2;
 }
 
 header nav {
   display: flex;
   justify-content: center;
   flex-grow: 1;
+  column-gap: 15px;
 }
 
 header nav a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
   font-size: 18px;
   transition: color 0.3s ease;
 }
@@ -90,6 +92,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   background-color: #ffebcd;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -118,7 +121,7 @@ p {
   margin-bottom: 30px;
 }
 
-button {
+.button {
   background-color: #e67e22;
   color: white;
   padding: 10px 20px;
@@ -128,7 +131,7 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.button:hover {
   background-color: #d35400;
 }
 
@@ -165,20 +168,138 @@ h2 {
 
 /* photos */
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 .gallery-item {
-    margin: 10px;
+  margin: 10px;
 }
 
 .gallery-item img {
-    width: 200px; /* Ширина каждого изображения */
-    height: 300px; /* Высота каждого изображения */
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.menu__btn {
+  display: none;
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  h1 {
+    color: #e74c3c;
+    font-size: 34px;
+    margin-top: 40px;
+  }
+  .photo {
+    width: 220px;
+    height: 220px;
+  }
+  .hero {
+    margin-top: 5px !important;
+  }
+  header {
+    position: relative;
+    z-index: 2;
+  }
+  header::before {
+    content: "";
+    z-index: 1;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: #e74c3c;
+  }
+  nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: #e74c3c;
+    padding: 10px 0;
+    transition: all 0.3s;
+    z-index: -1;
+    top: 0;
+  }
+  .menu__btn {
+    position: relative;
+    z-index: 2;
+  }
+  nav.active {
+    border-top: 1px solid #fff;
+    top: 85.2px;
+  }
+  .none {
+    display: none;
+  }
+  .menu__btn {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    z-index: 5;
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  .menu__btn span,
+  .menu__btn span::before,
+  .menu__btn span::after {
+    content: "";
+    display: block;
+    background-color: #fff;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s;
+  }
+  .menu__btn span::after {
+    bottom: -8px;
+  }
+  .menu__btn span::before {
+    top: -9px;
+  }
+  .menu__btn.active-btn span {
+    background-color: transparent;
+  }
+  .menu__btn.active-btn span::after {
+    top: -3px;
+    left: 0;
+    transform: rotate(45deg);
+  }
+
+  .menu__btn.active-btn span::before {
+    top: -3px;
+    right: 0;
+    transform: rotate(-45deg);
+  }
+  #reasons,
+  #photos {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+    max-width: 100%;
+  }
 }
