@@ -1,4 +1,5 @@
 let btn = document.querySelector(".menu__btn");
+let container = document.querySelector("#container");
 
 const burgerFunc = (
   menuClassName,
