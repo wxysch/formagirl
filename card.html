@@ -14,13 +14,16 @@
     <div class="container">
       <div class="logo">
         <a href="index.html"><img src="media/magiirrl.jpg" alt="Лого" /></a>
-        <nav>
-          <a href="photos.html">Наши фотки</a>
-          <a href="reasons.html">100 причин</a>
-          <a href="greeting.html">Поздравление</a>
-          <a href="card.html">Открытка</a>
-        </nav>
-        <div></div>
+        <div class="menu">
+          <nav class="nav">
+            <a href="photos.html">Наши фотки</a>
+            <a href="reasons.html">100 причин</a>
+            <a href="greeting.html">Поздравление</a>
+            <a href="card.html">Открытка</a>
+          </nav>
+          <b utton class="menu__btn"><span></span></b>
+        </div>
+        <div class="none"></div>
       </div>
     </div>
   </header>
@@ -30,7 +33,10 @@
       <p>
         Ты — самое дорогое, что у меня есть. И самое дорого, что я когда-либо мог получить.
       </p>
-      <button onclick="alert('Люблю тебя! 💖')">Нажми для сюрприза</button>
+      <button class="button" onclick="alert('Люблю тебя! 💖')">
+        Нажми для сюрприза
+      </button>
     </div>
+    <script src="./js/main.js"></script>
   </body>
 </html>
